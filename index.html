@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#e9e5dc">
+<title>Warped Mirror 001</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;height:100%;overflow:hidden;background:#e9e5dc;color:#171717;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;touch-action:none;user-select:none}body{display:grid;place-items:center}.room{position:relative;width:100%;height:100%;max-width:520px;overflow:hidden;background:linear-gradient(#eeeae2,#ddd7ca)}.tiny{position:absolute;top:max(18px,env(safe-area-inset-top));left:18px;font-size:11px;letter-spacing:.18em;opacity:.45}.mirror{position:absolute;inset:13% 8% 15%;border:2px solid #222;border-radius:48% 52% 46% 54%/42% 46% 54% 58%;background:rgba(255,255,255,.24);box-shadow:inset 0 0 50px #fff8,0 12px 30px #0002;overflow:hidden}.mirror:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(107deg,transparent 0 29px,#2221 30px,transparent 31px 61px);pointer-events:none}.thing{position:absolute;width:74px;height:74px;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid #171717;border-radius:50%;display:grid;place-items:center;font-size:27px;background:#f7f4ed;box-shadow:5px 7px 0 #171717;transition:border-radius .18s,box-shadow .18s}.thing.squish{border-radius:19% 61% 24% 67%/68% 20% 73% 25%;box-shadow:-7px 4px 0 #171717}.ghost{position:absolute;width:18px;height:18px;border:1px solid #171717;border-radius:50%;opacity:.16;pointer-events:none;transform:translate(-50%,-50%)}.note{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));width:100%;text-align:center;font-size:11px;opacity:.4;letter-spacing:.08em}.scar{position:absolute;height:1px;background:#171717;transform-origin:left center;opacity:.22;pointer-events:none}
+</style></head>
+<body><main class="room" id="room"><div class="tiny">WARPED MIRROR / 001</div><div class="mirror" id="mirror"><div class="thing" id="thing">•</div></div><div class="note">there are no instructions</div></main>
+<script>
+const mirror=document.querySelector('#mirror'), thing=document.querySelector('#thing');
+let held=false, ox=0, oy=0, scars=0;
+function point(e){const t=e.touches?e.touches[0]:e;const r=mirror.getBoundingClientRect();return{x:t.clientX-r.left,y:t.clientY-r.top}}
+function down(e){held=true;const p=point(e),r=thing.getBoundingClientRect(),m=mirror.getBoundingClientRect();ox=p.x-(r.left-m.left+r.width/2);oy=p.y-(r.top-m.top+r.height/2);thing.classList.toggle('squish');e.preventDefault()}
+function move(e){if(!held)return;const p=point(e);let x=p.x-ox,y=p.y-oy;thing.style.left=x+'px';thing.style.top=y+'px';
+ const g=document.createElement('i');g.className='ghost';g.style.left=(mirror.clientWidth-x)+'px';g.style.top=y+'px';mirror.appendChild(g);setTimeout(()=>g.remove(),700);
+ if(Math.random()<.055&&scars<18){scars++;const s=document.createElement('i');s.className='scar';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.width=(18+Math.random()*55)+'px';s.style.transform='rotate('+(Math.random()*160-80)+'deg)';mirror.appendChild(s)}e.preventDefault()}
+function up(){held=false}
+thing.addEventListener('pointerdown',down);window.addEventListener('pointermove',move,{passive:false});window.addEventListener('pointerup',up);
+mirror.addEventListener('pointerdown',e=>{if(e.target===thing)return;const p=point(e);thing.animate([{transform:'translate(-50%,-50%) scale(1)'},{transform:'translate(-50%,-50%) scale(.72)'},{transform:'translate(-50%,-50%) scale(1)'}],{duration:240});const dx=p.x-parseFloat(thing.style.left||mirror.clientWidth/2),dy=p.y-parseFloat(thing.style.top||mirror.clientHeight/2);thing.style.left=(parseFloat(thing.style.left||mirror.clientWidth/2)+dx*.22)+'px';thing.style.top=(parseFloat(thing.style.top||mirror.clientHeight/2)+dy*.22)+'px'});
+</script></body></html>
