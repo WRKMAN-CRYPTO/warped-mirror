@@ -3,42 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<meta name="theme-color" content="#05080b">
-<title>Warped Mirror 009 · SIDEWAYS KNOT</title>
+<meta name="theme-color" content="#050609">
+<title>Warped Mirror 010 · BLIND CORNER</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;overflow:hidden;background:#030506;color:#d9f5ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;touch-action:none;user-select:none}
-.app{height:100%;max-width:620px;margin:auto;display:grid;grid-template-rows:auto 1fr auto;background:radial-gradient(circle at 50% 42%,#0c151b 0,#05080b 58%,#010203 100%)}
-header{padding:max(14px,env(safe-area-inset-top)) 15px 10px;border-bottom:1px solid #17323d;display:flex;justify-content:space-between;align-items:end;gap:12px}
-.title{font-size:18px;letter-spacing:.04em}.title b{font-weight:400;color:#7edcff}.sub{font-size:7px;letter-spacing:.17em;opacity:.45;text-align:right;line-height:1.5}
-.stage{min-height:0;padding:10px}.chamber{height:100%;position:relative;overflow:hidden;border:1px solid #214655;border-radius:20px;background:radial-gradient(circle at 50% 50%,#081017,#020304 74%);box-shadow:inset 0 0 75px #000,0 15px 45px #0009}
-canvas{position:absolute;inset:0;width:100%;height:100%}.readout,.hint{position:absolute;pointer-events:none;font-size:8px;letter-spacing:.13em;line-height:1.5;opacity:.5}.readout{left:12px;top:10px}.hint{left:12px;right:12px;bottom:12px;text-align:center}.panel{padding:8px 12px max(12px,env(safe-area-inset-bottom));border-top:1px solid #17313d;background:#05090ddd;backdrop-filter:blur(8px)}
-.row{display:flex;justify-content:space-between;align-items:end;gap:10px}.label{font-size:8px;letter-spacing:.13em;opacity:.5}.wval{font-size:15px;margin-top:2px;letter-spacing:.08em}.track{height:34px;margin-top:8px;border:1px solid #235062;border-radius:99px;position:relative;background:#061018;overflow:hidden}.track:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#92e6ff30}.track:after{content:"-1W                 0                 +1W";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:7px;letter-spacing:.07em;opacity:.23;pointer-events:none}.needle{position:absolute;top:3px;bottom:3px;width:3px;border-radius:99px;background:#dff8ff;box-shadow:0 0 16px #6fdcff;left:50%;transform:translateX(-50%);pointer-events:none}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}button{min-height:43px;border:1px solid #28566b;border-radius:11px;background:#08141c;color:#caefff;font:inherit;font-size:9px;letter-spacing:.09em}button:active{background:#123143}
+html,body{margin:0;height:100%;overflow:hidden;background:#020305;color:#d9f7ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;touch-action:none;user-select:none}
+.app{height:100%;max-width:620px;margin:auto;display:grid;grid-template-rows:auto 1fr auto;background:radial-gradient(circle at 50% 40%,#0a1118 0,#040609 58%,#010203 100%)}
+header{padding:max(14px,env(safe-area-inset-top)) 15px 10px;border-bottom:1px solid #17303a;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.title{font-size:18px;letter-spacing:.04em}.title b{font-weight:400;color:#86dfff}.sub{font-size:7px;letter-spacing:.17em;opacity:.42;text-align:right;line-height:1.5}
+.stage{min-height:0;padding:10px}.chamber{height:100%;position:relative;overflow:hidden;border:1px solid #203f4d;border-radius:20px;background:radial-gradient(circle at 50% 48%,#071017,#020304 75%);box-shadow:inset 0 0 80px #000,0 15px 45px #0009}
+canvas{position:absolute;inset:0;width:100%;height:100%}.readout,.hint{position:absolute;pointer-events:none;font-size:8px;letter-spacing:.13em;line-height:1.5;opacity:.46}.readout{left:12px;top:10px}.hint{left:14px;right:14px;bottom:12px;text-align:center}.panel{padding:9px 12px max(12px,env(safe-area-inset-bottom));border-top:1px solid #17303a;background:#05090ddd;backdrop-filter:blur(8px)}
+.label{font-size:8px;letter-spacing:.13em;opacity:.47}.status{font-size:14px;letter-spacing:.08em;margin-top:3px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}button{min-height:44px;border:1px solid #285268;border-radius:11px;background:#08131b;color:#cbefff;font:inherit;font-size:9px;letter-spacing:.08em}button:active{background:#123043}
 </style>
 </head>
 <body>
 <main class="app">
-<header><div class="title">Warped Mirror <b>009</b></div><div class="sub">SIDEWAYS KNOT<br>CONNECTED ELSEWHERE</div></header>
-<section class="stage"><div class="chamber" id="ch"><canvas id="c"></canvas><div class="readout" id="readout"></div><div class="hint" id="hint">DRAG W. THE GAPS ARE NOT BREAKS.</div></div></section>
-<section class="panel"><div class="row"><div><div class="label">YOUR SLICE</div><div class="wval" id="wval">W +0.00</div></div><div class="label" id="pieces">0 VISIBLE ARCS</div></div><div class="track" id="track"><i class="needle" id="needle"></i></div><div class="buttons"><button id="drift">LET IT DRIFT</button><button id="zero">FIND THE MIDDLE</button></div></section>
+<header><div class="title">Warped Mirror <b>010</b></div><div class="sub">BLIND CORNER<br>SEE THE EFFECT, NOT THE THING</div></header>
+<section class="stage"><div class="chamber" id="ch"><canvas id="c"></canvas><div class="readout" id="readout">FIELD STABLE<br>CONTACT: NONE</div><div class="hint" id="hint">DRAG YOUR FINGER THROUGH THE DARK.</div></div></section>
+<section class="panel"><div class="label">INSTRUMENT REPORT</div><div class="status" id="status">NOTHING VISIBLE</div><div class="buttons"><button id="still">HOLD STILL</button><button id="forget">FORGET TRAIL</button></div></section>
 </main>
 <script>
-const ch=document.querySelector('#ch'),c=document.querySelector('#c'),g=c.getContext('2d'),track=document.querySelector('#track'),needle=document.querySelector('#needle'),wval=document.querySelector('#wval'),pieces=document.querySelector('#pieces'),readout=document.querySelector('#readout'),hint=document.querySelector('#hint');
-let W=0,drag=false,auto=true,t0=performance.now(),lastVisible=0;
+const ch=document.querySelector('#ch'),c=document.querySelector('#c'),g=c.getContext('2d'),readout=document.querySelector('#readout'),hint=document.querySelector('#hint'),status=document.querySelector('#status');
+let ptr={x:0,y:0,down:false,inside:false,lastX:0,lastY:0,speed:0},trails=[],freeze=false,t0=performance.now(),lastContact=0,contactCount=0;
+const field=[];for(let y=0;y<17;y++)for(let x=0;x<11;x++)field.push({u:(x+.5)/11,v:(y+.5)/17,phase:Math.random()*6.28});
 function resize(){const r=ch.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);c.width=r.width*d;c.height=r.height*d;g.setTransform(d,0,0,d,0,0)}addEventListener('resize',resize);resize();
-function knot(u){const a=u*Math.PI*2;return{x:Math.sin(a)+.46*Math.sin(3*a),y:.82*Math.cos(a)-.30*Math.cos(2*a),w:.62*Math.sin(2*a+.55)+.22*Math.sin(5*a)}}
-function sample(){const arr=[];for(let i=0;i<=420;i++){const u=i/420,p=knot(u);arr.push({...p,u})}return arr}const pts=sample();
-function draw(){const r=ch.getBoundingClientRect(),now=performance.now(),t=(now-t0)/1000;if(auto&&!drag)W=.72*Math.sin(t*.27);g.clearRect(0,0,r.width,r.height);
- for(let i=0;i<36;i++){g.fillStyle='rgba(120,220,255,.035)';g.fillRect((i*83.7+t*1.3)%r.width,(i*49.2)%r.height,1,1)}
- const cx=r.width/2,cy=r.height/2,s=Math.min(r.width,r.height)*.28,band=.18;let runs=0,inRun=false,visible=0;
- for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],da=Math.abs(a.w-W),db=Math.abs(b.w-W),ok=da<band&&db<band;if(ok){visible++;if(!inRun){runs++;inRun=true}const fa=1-da/band,fb=1-db/band,alpha=.16+.72*Math.min(fa,fb),lw=1.3+3.8*Math.min(fa,fb);g.strokeStyle=`rgba(133,224,255,${alpha})`;g.lineWidth=lw;g.lineCap='round';g.beginPath();g.moveTo(cx+a.x*s,cy+a.y*s);g.lineTo(cx+b.x*s,cy+b.y*s);g.stroke();if(Math.min(fa,fb)>.72){g.strokeStyle=`rgba(225,250,255,${.18*alpha})`;g.lineWidth=lw*2.5;g.beginPath();g.moveTo(cx+a.x*s,cy+a.y*s);g.lineTo(cx+b.x*s,cy+b.y*s);g.stroke()}}else inRun=false}
- if(visible===0){g.fillStyle='rgba(220,247,255,.2)';g.font='9px ui-monospace,monospace';g.textAlign='center';g.fillText('THE KNOT IS STILL HERE',cx,cy)}
- if(runs!==lastVisible){if(runs>=4)hint.textContent='ONE LOOP. '+runs+' PIECES IN YOUR SLICE.';else if(runs===1)hint.textContent='FOR A MOMENT, IT LOOKS ALMOST ORDINARY.';else hint.textContent='THE GAPS ARE NOT BREAKS.';lastVisible=runs}
- needle.style.left=((W+1)/2*100)+'%';wval.textContent='W '+(W>=0?'+':'')+W.toFixed(2);pieces.textContent=runs+' VISIBLE ARC'+(runs===1?'':'S');readout.innerHTML='OBJECT: 1 LOOP<br>VISIBLE: '+runs+' ARC'+(runs===1?'':'S')+'<br>HIDDEN: '+Math.max(0,Math.round((1-visible/420)*100))+'%';requestAnimationFrame(draw)}
-function setW(v){W=Math.max(-1,Math.min(1,v));auto=false}
-function fromPointer(e){const r=track.getBoundingClientRect();setW(((e.clientX-r.left)/r.width)*2-1)}
-track.addEventListener('pointerdown',e=>{drag=true;track.setPointerCapture(e.pointerId);fromPointer(e)});track.addEventListener('pointermove',e=>{if(drag)fromPointer(e)});track.addEventListener('pointerup',()=>drag=false);track.addEventListener('pointercancel',()=>drag=false);
-document.querySelector('#drift').onclick=()=>{auto=true;t0=performance.now()-Math.asin(Math.max(-1,Math.min(1,W/.72)))/.27*1000;hint.textContent='NO HANDS. JUST CROSS-SECTIONS.'};document.querySelector('#zero').onclick=()=>{setW(0);hint.textContent='THE MIDDLE IS NOT THE WHOLE.'};
+function hidden(t,r){const a=t*.31;return{x:r.width*(.5+.22*Math.sin(a*.71)+.08*Math.sin(a*1.9)),y:r.height*(.48+.20*Math.cos(a*.63)-.06*Math.cos(a*1.7)),rx:Math.min(r.width,r.height)*(.16+.025*Math.sin(a*.9)),ry:Math.min(r.width,r.height)*(.24+.03*Math.cos(a*.8)),tilt:.65*Math.sin(a*.41)} }
+function influence(x,y,o){const ct=Math.cos(o.tilt),st=Math.sin(o.tilt),dx=x-o.x,dy=y-o.y,qx=ct*dx+st*dy,qy=-st*dx+ct*dy,d=Math.sqrt((qx*qx)/(o.rx*o.rx)+(qy*qy)/(o.ry*o.ry));return Math.max(0,1-d)}
+function draw(){const r=ch.getBoundingClientRect(),t=(performance.now()-t0)/1000,o=hidden(t,r);g.clearRect(0,0,r.width,r.height);
+ for(let i=0;i<28;i++){g.fillStyle='rgba(125,220,255,.025)';g.fillRect((i*97.3+t*.8)%r.width,(i*57.1)%r.height,1,1)}
+ for(const p of field){let x=p.u*r.width,y=p.v*r.height,f=influence(x,y,o),a=t*.55+p.phase;let dx=Math.cos(a)*2,dy=Math.sin(a)*2;if(f>0){const ang=Math.atan2(y-o.y,x-o.x)+Math.PI/2;dx+=Math.cos(ang)*f*13;dy+=Math.sin(ang)*f*13}g.strokeStyle=`rgba(119,211,243,${.055+f*.28})`;g.lineWidth=.7+f*1.3;g.beginPath();g.moveTo(x-dx,y-dy);g.lineTo(x+dx,y+dy);g.stroke()}
+ if(ptr.down&&!freeze){const f=influence(ptr.x,ptr.y,o),now=performance.now();if(f>.02){trails.push({x:ptr.x,y:ptr.y,f,t:now,life:950});if(now-lastContact>180){contactCount++;lastContact=now}status.textContent=f>.72?'SOMETHING PUSHED BACK':f>.30?'FIELD DEFLECTED':'WEAK DISTURBANCE';readout.innerHTML='FIELD DISTORTION '+Math.round(f*100)+'%<br>CONTACTS '+contactCount+'<br>SPEED '+Math.round(ptr.speed);hint.textContent=f>.72?'YOU ARE VERY CLOSE TO SOMETHING YOU CANNOT SEE.':'THE FIELD BENDS BEFORE YOUR FINGER ARRIVES.'}else{status.textContent='NOTHING VISIBLE';readout.innerHTML='FIELD STABLE<br>CONTACTS '+contactCount+'<br>SPEED '+Math.round(ptr.speed)}}
+ const now=performance.now();trails=trails.filter(q=>now-q.t<q.life);for(const q of trails){const age=(now-q.t)/q.life,rad=5+q.f*28+age*16;g.strokeStyle=`rgba(159,231,255,${(1-age)*(.12+q.f*.42)})`;g.lineWidth=.7+q.f*2;g.beginPath();g.arc(q.x,q.y,rad,0,Math.PI*2);g.stroke()}
+ if(ptr.inside){g.strokeStyle='rgba(220,248,255,.34)';g.lineWidth=1;g.beginPath();g.arc(ptr.x,ptr.y,7,0,Math.PI*2);g.stroke();g.beginPath();g.moveTo(ptr.x-10,ptr.y);g.lineTo(ptr.x+10,ptr.y);g.moveTo(ptr.x,ptr.y-10);g.lineTo(ptr.x,ptr.y+10);g.stroke()}
+ requestAnimationFrame(draw)}
+function loc(e){const r=ch.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;ptr.speed=Math.hypot(x-ptr.lastX,y-ptr.lastY);ptr.lastX=x;ptr.lastY=y;ptr.x=x;ptr.y=y;ptr.inside=true}
+ch.addEventListener('pointerdown',e=>{ptr.down=true;ch.setPointerCapture(e.pointerId);loc(e)});ch.addEventListener('pointermove',e=>loc(e));ch.addEventListener('pointerup',()=>{ptr.down=false;status.textContent='NOTHING VISIBLE'});ch.addEventListener('pointercancel',()=>{ptr.down=false;ptr.inside=false});ch.addEventListener('pointerleave',()=>{if(!ptr.down)ptr.inside=false});
+document.querySelector('#forget').onclick=()=>{trails=[];contactCount=0;status.textContent='NOTHING VISIBLE';hint.textContent='IT FORGOT YOU. PROBABLY.'};document.querySelector('#still').onclick=()=>{freeze=!freeze;document.querySelector('#still').textContent=freeze?'LET IT MOVE':'HOLD STILL';hint.textContent=freeze?'THE HIDDEN THING STOPPED MOVING. THE FIELD DID NOT.':'DRAG YOUR FINGER THROUGH THE DARK.'};
 requestAnimationFrame(draw);
 </script>
 </body>
